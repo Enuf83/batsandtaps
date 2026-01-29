@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Cage - Bats and Taps | SE Portland Fun</title>
+  <meta name="description" content="Reserve your batting cage at Bats and Taps! Choose date, cages, duration, and timeslots. Secure online booking with payment."/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="https://img1.wsimg.com/isteam/ip/7f0629b5-d258-46c7-acf2-5090d6e1bc3c/Screenshot%202024-01-23%20003045.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:613,cg:true" alt="Bats and Taps Logo" class="logo-img">
+      </div>
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="general-info.html">General Info</a>
+          <div class="dropdown-content">
+            <a href="general-info.html#about">About</a>
+            <a href="events.html">Events</a>
+            <a href="photos.html">Photos</a>
+            <a href="staff.html">Staff</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="batting-cages.html">Batting Cages</a>
+          <div class="dropdown-content">
+            <a href="pricing.html">Pricing</a>
+            <a href="book-cage.html">Book a Cage</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="other-services.html">Other Services</a>
+          <div class="dropdown-content">
+            <a href="snack-taps.html">Snack Shack & Taps</a>
+            <a href="games-tvs.html">Games and TVs</a>
+            <a href="merch.html">B.A.T. Merch</a>
+            <a href="event-space.html">Event Space</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="booking-hero">
+  <div class="container hero-content">
+    <h1>Reserve Your Cage Today!</h1>
+    <p>Pick your date, choose your cage(s), select duration, and grab an available time. Up to 8 people per cage (max 3 batting at once). Payment secures your spot!</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width: 1000px;">
+
+    <form id="booking-form" class="booking-form">
+
+      <!-- Step 1: Date -->
+      <div class="step-section">
+        <h2 class="step-title">1. Select Date</h2>
+        <div class="form-group" style="text-align:center;">
+          <input type="date" id="booking-date" name="date" required style="font-size:1.2rem; padding:1rem; width:280px; max-width:100%;">
+        </div>
+      </div>
+
+      <!-- Step 2: Cages -->
+      <div class="step-section">
+        <h2 class="step-title">2. Select Cage(s)</h2>
+        <div class="selection-grid" data-multi="true">
+          <div class="option-card" data-cage="softball1"><strong>Softball 1</strong><br><small>(slow or fast pitch)</small></div>
+          <div class="option-card" data-cage="softball2"><strong>Softball 2</strong><br><small>(slow or fast pitch)</small></div>
+          <div class="option-card" data-cage="baseball1"><strong>Baseball 1</strong><br><small>(40–70 mph)</small></div>
+          <div class="option-card" data-cage="baseball2"><strong>Baseball 2</strong><br><small>(55–85 mph)</small></div>
+        </div>
+      </div>
+
+      <!-- Step 3: Duration -->
+      <div class="step-section">
+        <h2 class="step-title">3. Select Duration</h2>
+        <div class="selection-grid" data-multi="false">
+          <div class="option-card" data-duration="15">15 Minutes<br><small>$15</small></div>
+          <div class="option-card" data-duration="30">30 Minutes<br><small>$25</small></div>
+          <div class="option-card" data-duration="60">60 Minutes<br><small>$45</small></div>
+          <div class="option-card" data-duration="custom">90 Minutes<br><small>$70</small></div>
+        </div>
+      </div>
+
+      <!-- Step 4: Available Timeslots (placeholder — future dynamic) -->
+      <div class="step-section">
+        <h2 class="step-title">4. Available Timeslots</h2>
+        <div id="timeslots-container">
+          <div class="timeslot-bubbles">
+            <!-- Example placeholders — JS would replace these -->
+            <label class="timeslot-bubble"><input type="checkbox" name="timeslot" value="11:00-11:15"> 11:00 – 11:15</label>
+            <label class="timeslot-bubble"><input type="checkbox" name="timeslot" value="11:30-12:00"> 11:30 – 12:00</label>
+            <label class="timeslot-bubble"><input type="checkbox" name="timeslot" value="13:45-14:45"> 1:45 – 2:45 PM</label>
+            <label class="timeslot-bubble"><input type="checkbox" name="timeslot" value="15:15-15:30"> 3:15 – 3:30 PM</label>
+          </div>
+          <div id="no-availability" class="no-availability">
+            No Reservations Available Matching that Criteria
+          </div>
+        </div>
+        <p style="text-align:center; font-size:0.95rem; color:var(--color-accent); margin-top:1rem;">
+          (In the future: real-time slots based on your selections above)
+        </p>
+      </div>
+
+      <!-- Step 5: User Info -->
+      <div class="step-section">
+        <h2 class="step-title">5. Your Details</h2>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone (for SMS confirmation)</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="group-size">Group Size (max 8 per cage)</label>
+          <input type="number" id="group-size" name="group-size" min="1" max="32" value="1" required>
+        </div>
+        <div class="form-group">
+          <label for="notes">Notes / Special Requests</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+      </div>
+
+      <!-- Payment & Submit -->
+      <div style="background:rgba(0,245,212,0.1); padding:2rem; border-radius:12px; margin:3rem 0; text-align:center;">
+        <h3 style="color:var(--color-secondary);">Secure Payment Required to Confirm</h3>
+        <p>Credit card info will be collected securely. No charge until we confirm your booking.</p>
+        <p class="secure-note">🔒 Protected transaction — powered by [Stripe in future]</p>
+      </div>
+
+      <div style="text-align:center; margin:4rem 0;">
+        <button type="submit" class="btn" style="font-size:1.4rem; padding:1.3rem 3.5rem;">Confirm & Book Now</button>
+      </div>
+
+    </form>
+
+    <!-- Photo Reel -->
+    <div class="photo-reel" style="margin-top:5rem;">
+      <img loading="lazy" src="https://www.glasgowworld.com/jpim-static/image/2024/08/06/14/34/Immersive-Batting-Cages-v2.jpg?crop=3:2,smart&trim=&width=1200&auto=webp&quality=75" alt="Indoor multi-lane batting cages with neon vibe">
+      <img loading="lazy" src="https://static.giggster.com/images/location/2cea8000-e38c-4978-bbbb-09fd01274639/bc3dcf95-9b5b-4a20-b956-4dfd063cbc6f/gallery_1.jpeg" alt="Spacious indoor baseball facility with cages">
+      <img loading="lazy" src="https://media.istockphoto.com/id/538145983/photo/baseball-player.jpg?s=612x612&w=0&k=20&c=sPb30YHr-rKJrBaTpuNQqFG4FzbDZDkqV3N2D4ZE_iI=" alt="Close-up baseball swing in cage">
+      <img loading="lazy" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Ocir6tj9rgG8V0uToHKB/media/649b687dc6812947a98814b9.jpeg" alt="Indoor batting cages action">
+    </div>
+
+  </div>
+</section>
+
+<footer style="background:#111; padding:3rem 0; text-align:center;">
+  <div class="container">
+    <p>© 2026 Bats and Taps • SE Portland • Swing Big!</p>
+  </div>
+</footer>
+
+<script>
+// Persistent selection highlighting
+// Cages: multi-select (toggle each independently)
+document.querySelectorAll('.selection-grid[data-multi="true"] .option-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('selected');
+  });
+});
+
+// Durations: single-select (deselect others when one is clicked)
+document.querySelectorAll('.selection-grid[data-multi="false"] .option-card').forEach(card => {
+  card.addEventListener('click', () => {
+    // Deselect all in this group
+    document.querySelectorAll('.selection-grid[data-multi="false"] .option-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+  });
+});
+
+// Timeslot bubbles: multi-select (toggle each)
+document.querySelectorAll('.timeslot-bubble').forEach(bubble => {
+  bubble.addEventListener('click', () => {
+    bubble.classList.toggle('selected');
+  });
+});
+
+// Optional: basic form submit placeholder
+document.getElementById('booking-form').addEventListener('submit', e => {
+  e.preventDefault();
+  alert('Prototype booking submitted! (In production this would validate selections, check real availability, process payment, and send SMS.)');
+});
+</script>
+
+
+</body>
+</html>

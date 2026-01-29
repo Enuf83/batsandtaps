@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photos - Bats and Taps | SE Portland Fun</title>
+  <meta name="description" content="Browse fun photos from Bats and Taps: Batting cages, arcade games, family events, and more in Southeast Portland."/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+    <div class="container">
+    <nav>
+      <div class="logo">
+  <!-- Replace src with your real logo URL when ready -->
+  <img src="https://img1.wsimg.com/isteam/ip/7f0629b5-d258-46c7-acf2-5090d6e1bc3c/Screenshot%202024-01-23%20003045.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:613,cg:true" alt="Bats and Taps Logo" class="logo-img">
+  <!-- Or use text if image not ready: <span>Bats & Taps</span> -->
+</div>
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+
+    <!-- General Info with dropdown -->
+    <li class="dropdown">
+      <a href="general-info.html">General Info</a>
+      <div class="dropdown-content">
+        <a href="general-info.html#about">About</a>
+        <a href="events.html">Events</a>
+        <a href="photos.html">Photos</a>
+        <a href="staff.html">Staff</a>
+      </div>
+    </li>
+
+    <!-- Batting Cages with dropdown -->
+    <li class="dropdown">
+      <a href="batting-cages.html">Batting Cages</a>
+      <div class="dropdown-content">
+        <a href="pricing.html">Pricing</a>
+        <a href="book-cage.html">Book a Cage</a>
+      </div>
+    </li>
+
+    <!-- Other Services with dropdown (more nesting if needed later) -->
+    <li class="dropdown">
+      <a href="other-services.html">Other Services</a>
+      <div class="dropdown-content">
+        <a href="snack-taps.html">Snack Shack &amp; Taps</a>
+        <a href="games-tvs.html">Games and TVs</a>
+        <a href="merch.html">B.A.T. Merch</a>
+        <a href="event-space.html">Event Space</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+  </div>
+
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1 style="text-align:center; margin-bottom:2rem; color:var(--color-secondary);">Photo Gallery</h1>
+    <p style="text-align:center; max-width:800px; margin:0 auto 3rem;">Check out the fun vibes at Bats and Taps! From batting cage action to arcade thrills and family hangouts. Swipe or click to browse our neon-lit moments.</p>
+    
+    <!-- Carousel Container -->
+    <div class="photo-carousel">
+      <div class="carousel-preview left">
+        <img id="prev-img" src="" alt="Previous Photo Preview">
+      </div>
+      <div class="carousel-main">
+        <img id="main-img" src="" alt="Current Photo">
+      </div>
+      <div class="carousel-preview right">
+        <img id="next-img" src="" alt="Next Photo Preview">
+      </div>
+    </div>
+    
+    <!-- Controls -->
+    <div class="carousel-controls">
+      <button class="carousel-btn left" onclick="shiftPhotos(-1)">&larr; Prev</button>
+      <button class="carousel-btn right" onclick="shiftPhotos(1)">Next &rarr;</button>
+    </div>
+    
+    <!-- Optional: Photo Credits or Captions (add real ones later) -->
+    <p id="photo-caption" style="text-align:center; margin-top:1.5rem; font-style:italic;">Loading photo...</p>
+  </div>
+</section>
+
+<footer style="background:#111; padding:3rem 0; text-align:center;">
+  <div class="container">
+    <p>&copy; 2026 Bats and Taps • SE Portland • Swing Big!</p>
+  </div>
+</footer>
+
+<script>
+  // Photo array (placeholders - replace with yours)
+  const photos = [
+    { url: 'https://offloadmedia.feverup.com/secretlosangeles.com/wp-content/uploads/2024/03/14034656/Arcades-Los-Angeles.jpg', caption: 'Neon arcade vibes at Bats and Taps' },
+    { url: 'https://www.neonretroarcade.com/images/nav/announcement-MEETME.jpg', caption: 'Retro games and fun challenges' },
+    { url: 'https://s3-media0.fl.yelpcdn.com/bphoto/KxUthr8HfKdjRnSi8cE-Bw/l.jpg', caption: 'Family batting practice session' },
+    { url: 'https://www.shutterstock.com/image-photo/arcade-game-center-neon-retro-260nw-2632719825.jpg', caption: 'Glowing neon arcade machines' },
+    { url: 'https://www.shutterstock.com/image-photo/happy-family-enjoying-competitive-game-600w-2478596207.jpg', caption: 'Group fun in the game zone' },
+    { url: 'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10158030546651312', caption: 'Energetic sports and play area' }
+  ];
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const prevIndex = (currentIndex - 1 + photos.length) % photos.length;
+    const nextIndex = (currentIndex + 1) % photos.length;
+
+    document.getElementById('prev-img').src = photos[prevIndex].url;
+    document.getElementById('main-img').src = photos[currentIndex].url;
+    document.getElementById('next-img').src = photos[nextIndex].url;
+
+    document.getElementById('photo-caption').textContent = photos[currentIndex].caption;
+  }
+
+  function shiftPhotos(direction) {
+    currentIndex = (currentIndex + direction + photos.length) % photos.length;
+    updateCarousel();
+  }
+
+  // Initial load
+  updateCarousel();
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>

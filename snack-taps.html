@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snack Shack & Taps - Bats and Taps | SE Portland Fun</title>
+  <meta name="description" content="Grab ballpark bites, sweet treats, and refreshing drinks at Bats and Taps Snack Shack. Family-friendly eats and local craft taps in SE Portland!"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="https://img1.wsimg.com/isteam/ip/7f0629b5-d258-46c7-acf2-5090d6e1bc3c/Screenshot%202024-01-23%20003045.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:613,cg:true" alt="Bats and Taps Logo" class="logo-img">
+      </div>
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="general-info.html">General Info</a>
+          <div class="dropdown-content">
+            <a href="general-info.html#about">About</a>
+            <a href="events.html">Events</a>
+            <a href="photos.html">Photos</a>
+            <a href="staff.html">Staff</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="batting-cages.html">Batting Cages</a>
+          <div class="dropdown-content">
+            <a href="pricing.html">Pricing</a>
+            <a href="book-cage.html">Book a Cage</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="other-services.html">Other Services</a>
+          <div class="dropdown-content">
+            <a href="snack-taps.html">Snack Shack & Taps</a>
+            <a href="games-tvs.html">Games and TVs</a>
+            <a href="merch.html">B.A.T. Merch</a>
+            <a href="event-space.html">Event Space</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80'); background-position: center; background-size: cover;">
+  <div class="container hero-content">
+    <h1>Snack Shack & Taps</h1>
+    <p>Ballpark bites, sweet treats, and cool drinks to keep the whole crew swinging and smiling!</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="text-align:center;">
+
+    <h2 style="color:var(--color-secondary); margin-bottom:2rem;">Our Menu</h2>
+    <p style="max-width:800px; margin:0 auto 3rem; font-size:1.15rem;">
+      Fresh, fun, family-friendly eats made with house-made goodies and local flair. Check out the full menu below!
+    </p>
+
+    <!-- MENU IMAGE – REPLACE SRC HERE -->
+    <img src="https://via.placeholder.com/900x1800/0a0a1f/00f5d4?text=Snack+Shack+%26+Taps+Menu+(Replace+with+Your+Image)" 
+         alt="Bats and Taps Snack Shack & Taps Menu" 
+         class="menu-image" 
+         style="max-width:1000px; width:100%; height:auto; border-radius:15px; box-shadow: var(--neon-glow-cyan), var(--neon-glow-pink); border: 3px solid var(--color-accent); margin:0 auto 4rem; display:block;">
+
+    <!-- Optional small text below image for accessibility -->
+    <p style="font-size:0.95rem; color:var(--color-accent); max-width:900px; margin:0 auto 3rem;">
+      Menu features fresh, local ingredients where possible. Please ask staff about allergens—some items may contain nuts, dairy, gluten, etc.
+    </p>
+
+    <!-- Photo reel for vibe -->
+    <div class="photo-reel" style="margin:4rem 0;">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Grilled elote corn with toppings">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Loaded nachos with pulled pork">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gooey gourmet grilled cheese">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Soft serve ice cream treat">
+    </div>
+
+    <a href="contact.html" class="btn" style="font-size:1.3rem; padding:1.2rem 3rem;">Questions? Let Us Know!</a>
+
+  </div>
+</section>
+
+<footer style="background:#111; padding:3rem 0; text-align:center;">
+  <div class="container">
+    <p>&copy; 2026 Bats and Taps • SE Portland • Swing Big!</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>

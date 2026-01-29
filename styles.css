@@ -1,0 +1,741 @@
+/* Bats and Taps - 80s Retro Neon Vibes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Righteous&display=swap');
+
+/* ── Custom Properties (Variables) ── */
+:root {
+  /* Colors */
+  --color-bg: #0a0a1f;
+  --color-primary: #ff69b4;     /* Hot pink */
+  --color-secondary: #00f5d4;   /* Bright cyan/turquoise */
+  --color-accent: #9b5de5;      /* Vibrant purple */
+  --color-text: #ffffff;
+  --color-dark: #0a0a1f;
+
+  /* Transitions & Timing */
+  --transition-quick: all 0.3s ease;
+  --transition-base:  all 0.4s ease;
+  --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Neon Effects */
+  --neon-glow-pink:  0 0 15px var(--color-primary);
+  --neon-glow-cyan:  0 0 20px var(--color-secondary);
+  --neon-glow-purple: 0 0 18px var(--color-accent);
+
+  /* Hover/Interaction */
+  --hover-scale:     scale(1.05);
+  --lift-hover:      translateY(-10px);
+  --hover-shadow:    0 10px 25px rgba(255,105,180,0.7);
+}
+
+/* Reusable Neon Pulse Animation */
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: var(--neon-glow-pink);
+  }
+  50% {
+    text-shadow: var(--neon-glow-cyan);
+  }
+}
+
+/* ── Reset & Base ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ── Typography ── */
+h1, h2, h3 {
+  font-family: 'Righteous', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Layout Utilities ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+/* ── Header & Navigation ── */
+header {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent), var(--color-secondary));
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  max-height: 80px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: var(--transition-quick);
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: var(--hover-scale);
+}
+
+/* Dropdown Menus */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 99;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 1rem 1.2rem;
+  font-weight: 600;
+  color: white;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0,245,212,0.4);
+}
+
+/* ── Hero Section ── */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('your-hero-image.jpg');
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 1rem;
+  text-shadow: var(--neon-glow-pink);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(255,105,180,0.5);
+  transition: var(--transition-base);
+}
+
+.btn:hover {
+  transform: var(--hover-scale);
+  background: var(--color-secondary);
+  color: var(--color-dark);
+  box-shadow: var(--hover-shadow);
+}
+
+/* ── Cards & Grids ── */
+.card-grid,
+.staff-grid,
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition-base);
+}
+
+.card:hover {
+  transform: var(--lift-hover);
+}
+
+/* Image Cards */
+.staff-card img,
+.photo-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid var(--color-secondary);
+  box-shadow: var(--neon-glow-cyan);
+  transition: var(--transition-quick);
+}
+
+.staff-card img:hover,
+.photo-grid img:hover {
+  transform: var(--hover-scale);
+}
+
+/* ── Photo Reel (Horizontal Scroll) ── */
+.photo-reel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.photo-reel img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transition: var(--transition-quick);
+}
+
+.photo-reel img:hover {
+  transform: var(--hover-scale);
+}
+
+/* ── About Page Specific ── */
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.about-content h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+  text-shadow: var(--neon-glow-pink);
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Calendar ── */
+.calendar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 2rem 0;
+}
+
+.calendar {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(155,93,229,0.3);
+}
+
+.calendar th,
+.calendar td {
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.calendar th {
+  background: var(--color-accent);
+  font-weight: 700;
+  color: white;
+}
+
+.calendar td.empty {
+  background: transparent;
+}
+
+.calendar td:hover {
+  background: rgba(0,245,212,0.15);
+}
+
+.event-day .day-number {
+  font-weight: 700;
+  color: var(--color-primary);
+  text-shadow: var(--neon-glow-pink);
+  cursor: pointer;
+}
+
+/* ── Event Popup ── */
+.event-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  color: var(--color-dark);
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+  z-index: 200;
+  width: 90%;
+  max-width: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 2px solid var(--color-secondary);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) #f0f0f0;
+}
+
+.event-popup::-webkit-scrollbar {
+  width: 8px;
+}
+
+.event-popup::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.event-popup::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+.event-popup::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+.event-popup h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1.3rem;
+}
+
+.event-popup .time {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.event-item {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.event-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.popup-date {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--color-secondary);
+  text-shadow: var(--neon-glow-pink);
+}
+
+/* ── Hamburger Menu ── */
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* ── Responsive Adjustments ── */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg);
+    padding: 1rem 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    background: rgba(255,255,255,0.1);
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown > a::after {
+    content: ' ▼';
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .calendar td {
+    padding: 1.2rem;
+  }
+
+  .event-day:hover .event-popup {
+    display: none;
+  }
+
+  .event-day.active .event-popup {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .event-day:hover .event-popup {
+    display: block;
+  }
+}
+
+/* Popup backdrop dimming */
+.event-day.active::before,
+.event-day:hover::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,31,0.7);
+  z-index: 199;
+  pointer-events: none;
+}
+
+/* ── Photo Carousel ── */
+.photo-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel-main {
+  flex: 0 0 60%;
+  max-width: 800px;
+}
+
+.carousel-main img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: var(--neon-glow-purple);
+  transition: var(--transition-base);
+}
+
+.carousel-preview {
+  flex: 0 0 20%;
+  opacity: 0.7;
+  transition: opacity var(--transition-quick);
+}
+
+.carousel-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--neon-glow-cyan);
+}
+
+.carousel-preview:hover {
+  opacity: 1;
+}
+
+.carousel-controls {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.carousel-btn {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  margin: 0 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-quick);
+}
+
+.carousel-btn:hover {
+  background: var(--color-secondary);
+  transform: var(--hover-scale);
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+  .photo-carousel {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .carousel-main {
+    flex: none;
+    width: 100%;
+  }
+
+  .carousel-preview {
+    display: none; /* Hide thumbs on very small screens; use buttons only */
+  }
+}
+
+/* ── Staff Page Layout ── */
+.staff-member {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+}
+
+.staff-member.reverse {
+  flex-direction: row-reverse;
+}
+
+.staff-image {
+  flex: 1 1 40%;
+  max-width: 400px;
+}
+
+.staff-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: var(--neon-glow-purple);
+  border: 4px solid var(--color-secondary);
+  transition: var(--transition-base);
+}
+
+.staff-image img:hover {
+  transform: var(--hover-scale);
+}
+
+.staff-info {
+  flex: 1 1 55%;
+}
+
+.staff-info h2 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  text-shadow: var(--neon-glow-pink);
+}
+
+.staff-info h3 {
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.staff-info p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* Responsive: Stack on smaller screens */
+@media (max-width: 900px) {
+  .staff-member,
+  .staff-member.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .staff-image {
+    max-width: 350px;
+  }
+}
+
+/* ── Booking Page Specific ── */
+.booking-hero {
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://res.cloudinary.com/spothopper/image/fetch/f_auto,q_auto:best,c_fit,h_1200/http://static.spotapps.co/spots/4b/fa3579aab54970a28a9a846056b5f6/:original');
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.step-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  border: 1px solid var(--color-accent);
+}
+
+.step-title {
+  color: var(--color-secondary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+
+.option-card {
+  background: rgba(255,105,180,0.15);
+  border: 2px solid var(--color-primary);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-base);
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.option-card:hover,
+.option-card.selected {
+  background: var(--color-primary);
+  color: var(--color-dark);
+  transform: scale(1.05);
+  box-shadow: var(--neon-glow-pink);
+}
+
+.timeslot-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.timeslot-bubble {
+  background: rgba(0,245,212,0.2);
+  border: 2px solid var(--color-secondary);
+  border-radius: 50px;
+  padding: 1rem 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-quick);
+  position: relative;
+}
+
+.timeslot-bubble input[type="checkbox"] {
+  display: none;
+}
+
+.timeslot-bubble.selected {
+  background: var(--color-secondary);
+  color: var(--color-dark);
+  box-shadow: var(--neon-glow-cyan);
+}
+
+.no-availability {
+  display: none;
+  background: rgba(255,0,0,0.2);
+  border: 2px solid red;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+}
+
+.booking-form .form-group {
+  margin-bottom: 1.8rem;
+}
+
+.booking-form .form-group label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.booking-form .form-group input,
+.booking-form .form-group textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-accent);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1rem;
+}

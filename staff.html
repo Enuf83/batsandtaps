@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Staff - Bats and Taps | SE Portland Fun</title>
+  <meta name="description" content="Meet the team behind Bats and Taps: Passionate about baseball, softball, games, and community fun in Southeast Portland."/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <!-- Your chosen logo from earlier -->
+        <img src="https://img1.wsimg.com/isteam/ip/7f0629b5-d258-46c7-acf2-5090d6e1bc3c/Screenshot%202024-01-23%20003045.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:613,cg:true" alt="Bats and Taps Logo" class="logo-img">
+      </div>
+
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <!-- General Info with dropdown -->
+        <li class="dropdown">
+          <a href="general-info.html">General Info</a>
+          <div class="dropdown-content">
+            <a href="general-info.html#about">About</a>
+            <a href="events.html">Events</a>
+            <a href="photos.html">Photos</a>
+            <a href="staff.html">Staff</a>
+          </div>
+        </li>
+
+        <!-- Batting Cages with dropdown -->
+        <li class="dropdown">
+          <a href="batting-cages.html">Batting Cages</a>
+          <div class="dropdown-content">
+            <a href="pricing.html">Pricing</a>
+            <a href="book-cage.html">Book a Cage</a>
+          </div>
+        </li>
+
+        <!-- Other Services with dropdown -->
+        <li class="dropdown">
+          <a href="other-services.html">Other Services</a>
+          <div class="dropdown-content">
+            <a href="snack-taps.html">Snack Shack & Taps</a>
+            <a href="games-tvs.html">Games and TVs</a>
+            <a href="merch.html">B.A.T. Merch</a>
+            <a href="event-space.html">Event Space</a>
+          </div>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1 style="text-align:center; margin-bottom:3rem; color:var(--color-secondary);">Meet Our Team</h1>
+    <p style="text-align:center; max-width:800px; margin:0 auto 4rem;">Our passionate crew brings the energy, fun, and love of the game to every visitor at Bats and Taps!</p>
+
+    <!-- Staff Member 1: Owner - Image Left, Text Right -->
+    <div class="staff-member">
+      <div class="staff-image">
+        <img src="https://thrifttale.com/cdn/shop/articles/80s-mens-cover-1_12951e9e-32ef-4652-b397-2b3a3aa3acf6.jpg?v=1763560379" alt="Owner - Mike Thompson">
+      </div>
+      <div class="staff-info">
+        <h2>Mike Thompson</h2>
+        <h3>Owner & Founder</h3>
+        <p>Mike is the heart and soul behind Bats and Taps. A lifelong baseball enthusiast, he dreamed up this vibrant space to bring families, athletes, and game lovers together. When he's not swinging a bat or pouring a craft beer, he's planning the next big event!</p>
+      </div>
+    </div>
+
+    <!-- Staff Member 2: COO - Image Right, Text Left -->
+    <div class="staff-member reverse">
+      <div class="staff-image">
+        <img src="https://us.123rf.com/450wm/juanmalw/juanmalw2309/juanmalw230904136/232175918-woman-in-colorful-80s-jacket-90s-vibes-concept-image.jpg?ver=6" alt="COO - Sarah Rivera">
+      </div>
+      <div class="staff-info">
+        <h2>Sarah Rivera</h2>
+        <h3>Chief Operating Officer</h3>
+        <p>Sarah keeps everything running smoothly with her 80s energy and organizational superpowers. From scheduling cages to managing our neon-lit arcade, she makes sure every day at Bats and Taps is a home run.</p>
+      </div>
+    </div>
+
+    <!-- Staff Member 3: Manager - Image Left, Text Right -->
+    <div class="staff-member">
+      <div class="staff-image">
+        <img src="https://www.shutterstock.com/image-photo/happy-biracial-woman-playing-video-260nw-2475706509.jpg" alt="Manager - Alex Chen">
+      </div>
+      <div class="staff-info">
+        <h2>Alex Chen</h2>
+        <h3>General Manager</h3>
+        <p>Alex is the on-the-ground leader who greets every guest with a smile. A former college softball player, she loves coaching our youth workshops and making sure the taps are flowing and the games are on!</p>
+      </div>
+    </div>
+
+    <!-- Staff Member 4: Associate - Image Right, Text Left -->
+    <div class="staff-member reverse">
+      <div class="staff-image">
+        <img src="https://www.shutterstock.com/image-photo/portrait-cheerful-african-american-entrepreneur-260nw-2662592919.jpg" alt="Associate - Jordan Lee">
+      </div>
+      <div class="staff-info">
+        <h2>Jordan Lee</h2>
+        <h3>Lead Associate & Events Coordinator</h3>
+        <p>Jordan is our go-to person for epic events and customer fun. With a passion for retro games and softball trivia, Jordan keeps the vibe lively and the arcade humming all day long.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer style="background:#111; padding:3rem 0; text-align:center;">
+  <div class="container">
+    <p>&copy; 2026 Bats and Taps • SE Portland • Swing Big!</p>
+  </div>
+</footer>
+
+<script>
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>

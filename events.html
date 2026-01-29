@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events - Bats and Taps | SE Portland Fun</title>
+  <meta name="description" content="Upcoming events at Bats and Taps: Baseball clinics, family nights, and more in Southeast Portland."/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+    <div class="container">
+    <nav>
+      <div class="logo">
+  <!-- Replace src with your real logo URL when ready -->
+  <img src="https://img1.wsimg.com/isteam/ip/7f0629b5-d258-46c7-acf2-5090d6e1bc3c/Screenshot%202024-01-23%20003045.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:613,cg:true" alt="Bats and Taps Logo" class="logo-img">
+  <!-- Or use text if image not ready: <span>Bats & Taps</span> -->
+</div>
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+
+    <!-- General Info with dropdown -->
+    <li class="dropdown">
+      <a href="general-info.html">General Info</a>
+      <div class="dropdown-content">
+        <a href="general-info.html#about">About</a>
+        <a href="events.html">Events</a>
+        <a href="photos.html">Photos</a>
+        <a href="staff.html">Staff</a>
+      </div>
+    </li>
+
+    <!-- Batting Cages with dropdown -->
+    <li class="dropdown">
+      <a href="batting-cages.html">Batting Cages</a>
+      <div class="dropdown-content">
+        <a href="pricing.html">Pricing</a>
+        <a href="book-cage.html">Book a Cage</a>
+      </div>
+    </li>
+
+    <!-- Other Services with dropdown (more nesting if needed later) -->
+    <li class="dropdown">
+      <a href="other-services.html">Other Services</a>
+      <div class="dropdown-content">
+        <a href="snack-taps.html">Snack Shack & Taps</a>
+        <a href="games-tvs.html">Games and TVs</a>
+        <a href="merch.html">B.A.T. Merch</a>
+        <a href="event-space.html">Event Space</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+  </div>
+</header>
+
+<section class="section calendar-section">
+  <div class="container">
+    <h1 style="text-align:center; margin-bottom:3rem; color:#00f5d4;">Upcoming Events - January 2026</h1>
+    
+    <table class="calendar">
+  <thead>
+    <tr>
+      <th>Su</th>
+      <th>Mo</th>
+      <th>Tu</th>
+      <th>We</th>
+      <th>Th</th>
+      <th>Fr</th>
+      <th>Sa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Week 1 -->
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><div class="day-number">1</div></td>
+      <td><div class="day-number">2</div></td>
+      <td><div class="day-number">3</div></td>
+    </tr>
+    <!-- Week 2 -->
+    <tr>
+      <td><div class="day-number">4</div></td>
+      <td><div class="day-number">5</div></td>
+      <td><div class="day-number">6</div></td>
+      <td><div class="day-number">7</div></td>
+      <td><div class="day-number">8</div></td>
+      <td><div class="day-number">9</div></td>
+      <td class="event-day">
+        <div class="day-number">10</div>
+        <div class="event-popup">
+	<h3 class="popup-date">01/10/26</h3>
+          <div class="event-item">
+            <h4>Softball Tournament</h4>
+            <p class="time">All Day</p>
+            <p>Join teams from around Portland for a friendly competition in our cages. Prizes for winners!</p>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <!-- Week 3 -->
+    <tr>
+      <td><div class="day-number">11</div></td>
+      <td><div class="day-number">12</div></td>
+      <td><div class="day-number">13</div></td>
+      <td><div class="day-number">14</div></td>
+      <td class="event-day">
+        <div class="day-number">15</div>
+        <div class="event-popup">
+	<h3 class="popup-date">01/15/26</h3>
+          <div class="event-item">
+            <h4>Kids' Batting Workshop</h4>
+            <p class="time">10am - 12pm</p>
+            <p>Fun training session for young athletes. Learn basics with our pros. Ages 8-12.</p>
+          </div>
+        </div>
+      </td>
+      <td><div class="day-number">16</div></td>
+      <td><div class="day-number">17</div></td>
+    </tr>
+    <!-- Week 4 - Multiple events on 22 -->
+    <tr>
+      <td><div class="day-number">18</div></td>
+      <td><div class="day-number">19</div></td>
+      <td><div class="day-number">20</div></td>
+      <td><div class="day-number">21</div></td>
+      <td class="event-day">
+        <div class="day-number">22</div>
+        <div class="event-popup">
+	<h3 class="popup-date">01/22/26</h3>
+          <div class="event-item">
+            <h4>Beer Tasting Night</h4>
+            <p class="time">7pm - 9pm</p>
+            <p>Sample local craft beers while watching the game. 21+ only. Pair with ballpark snacks!</p>
+          </div>
+          <div class="event-item">
+            <h4>Trivia Night: Sports Edition</h4>
+            <p class="time">8pm - 10pm</p>
+            <p>Test your baseball/softball knowledge with friends. Prizes for top teams!</p>
+          </div>
+        </div>
+      </td>
+      <td><div class="day-number">23</div></td>
+      <td><div class="day-number">24</div></td>
+    </tr>
+    <!-- Week 5 - Multiple events on 28 (3 events) -->
+    <tr>
+      <td><div class="day-number">25</div></td>
+      <td><div class="day-number">26</div></td>
+      <td><div class="day-number">27</div></td>
+      <td class="event-day">
+        <div class="day-number">28</div>
+          <div class="event-popup">
+	<h3 class="popup-date">01/28/26</h3>
+          <div class="event-item">
+            <h4>Family Fun Day</h4>
+            <p class="time">1pm - 5pm</p>
+            <p>Games, batting challenges, and free arcade plays for kids. All ages welcome!</p>
+          </div>
+          <div class="event-item">
+            <h4>Youth League Practice</h4>
+            <p class="time">6pm - 8pm</p>
+            <p>Coached session for local youth teams. Equipment provided.</p>
+          </div>
+          <div class="event-item">
+            <h4>Late Night Arcade Tournament</h4>
+            <p class="time">9pm - 11pm</p>
+            <p>High-score battles on classic games. Free entry, winner gets merch!</p>
+          </div>
+<div class="event-item">
+            <h4>After Hours Party</h4>
+            <p class="time">12am - ???</p>
+            <p>Come swing your bat and balls around!</p>
+          </div>
+        </div>
+      </td>
+      <td><div class="day-number">29</div></td>
+      <td><div class="day-number">30</div></td>
+      <td><div class="day-number">31</div></td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+</section>
+
+<footer style="background:#111; padding:3rem 0; text-align:center;">
+  <div class="container">
+    <p>&copy; 2026 Bats and Taps • SE Portland • Swing Big!</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile tap toggle for event popups
+  document.querySelectorAll('.event-day').forEach(day => {
+    day.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent closing immediately
+      day.classList.toggle('active');
+    });
+  });
+
+  // Close popups when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.event-day')) {
+      document.querySelectorAll('.event-day.active').forEach(day => day.classList.remove('active'));
+    }
+  });
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>

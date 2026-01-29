@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>General Info - Bats and Taps | SE Portland Fun</title>
+  <meta name="description" content="Learn about Bats and Taps: Batting cages, games, food, beer, and family fun in Southeast Portland."/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+    <div class="container">
+    <nav>
+      <div class="logo">
+  <!-- Replace src with your real logo URL when ready -->
+  <img src="https://img1.wsimg.com/isteam/ip/7f0629b5-d258-46c7-acf2-5090d6e1bc3c/Screenshot%202024-01-23%20003045.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:613,cg:true" alt="Bats and Taps Logo" class="logo-img">
+  <!-- Or use text if image not ready: <span>Bats & Taps</span> -->
+</div>
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+
+    <!-- General Info with dropdown -->
+    <li class="dropdown">
+      <a href="general-info.html">General Info</a>
+      <div class="dropdown-content">
+        <a href="general-info.html#about">About</a>
+        <a href="events.html">Events</a>
+        <a href="photos.html">Photos</a>
+        <a href="staff.html">Staff</a>
+      </div>
+    </li>
+
+    <!-- Batting Cages with dropdown -->
+    <li class="dropdown">
+      <a href="batting-cages.html">Batting Cages</a>
+      <div class="dropdown-content">
+        <a href="pricing.html">Pricing</a>
+        <a href="book-cage.html">Book a Cage</a>
+      </div>
+    </li>
+
+    <!-- Other Services with dropdown (more nesting if needed later) -->
+    <li class="dropdown">
+      <a href="other-services.html">Other Services</a>
+      <div class="dropdown-content">
+        <a href="snack-taps.html">Snack Shack & Taps</a>
+        <a href="games-tvs.html">Games and TVs</a>
+        <a href="merch.html">B.A.T. Merch</a>
+        <a href="event-space.html">Event Space</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="about-content">
+      <h1>About Bats & Taps</h1>
+      
+      <p>Established in 2026, Bats and Taps brings a fresh take on sports training and recreation to the SE Portland metro. Bats and Taps (BAT) primarily operates as a batting cage but offers sports themed games and activities for everyone to enjoy.</p>
+      
+      <p>The large space is designed to promote an ideal experience for the athlete in training as well as the game loving kid in all of us.</p>
+      
+      <p>There are arcades, yard games, TVs, food, beer and more, all in addition to 4 full length and fully equipped batting cages.</p>
+      
+      <p>The atmosphere is bright and cheerful, and the vibe is lively and upbeat.</p>
+      
+      <p>Love/passion for baseball and softball.</p>
+      
+      <p>BAT strives to be a place that the whole family can enjoy, and a place that the community can be proud of, for the peace, fun and refreshment it brings.</p>
+      
+      <p>You can watch a game while enjoying food and beer from our ballpark inspired menu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Placeholder section for future photos (horizontal reel example) -->
+<section class="section" style="background: rgba(155,93,229,0.15);">
+  <div class="container">
+    <h2 style="text-align:center; color:#00f5d4; margin-bottom:2rem;">Sneak Peek at the Fun</h2>
+    <div class="photo-reel">
+      <!-- Placeholder images - swap with yours later -->
+      <img src="https://thumbs.dreamstime.com/b/retro-neon-arcade-game-room-glowing-lights-checkerboard-floor-vibrant-futuristic-bathed-pink-blue-featuring-classic-424440122.jpg" alt="Neon arcade games">
+      <img src="https://prod.butlins-prod.magnolia-platform.com/.imaging/default/dam/Family-assets/Things-to-Do/Activities/PLAYXPERIENCE/Activities/Batting-Cage/24917.jpg/jcr:content.jpg" alt="Family batting cage fun">
+      <img src="https://thumbs.dreamstime.com/b/colorful-aerobics-studio-participants-wear-vibrant-leotards-leggings-women-s-style-workout-attire-exercising-421761527.jpg" alt="80s bright fun vibe">
+      <img src="https://media.istockphoto.com/id/1746440560/photo/thee-young-men-friends-in-vintage-sportswear-training-doing-aerobics-against-gradient-yellow.jpg?s=612x612&w=0&k=20&c=GthXsJrdq_dSCA40uyGCeKtUSE-nAOa73rDW_ee0V80=" alt="Retro energetic group">
+    </div>
+  </div>
+</section>
+
+<footer style="background:#111; padding:3rem 0; text-align:center;">
+  <div class="container">
+    <p>&copy; 2026 Bats and Taps • SE Portland • Swing Big!</p>
+  </div>
+</footer>
+
+<script>
+  // Optional: Close mobile menu when clicking a link (improves UX)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>

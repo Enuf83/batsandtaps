@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bats and Taps - SE Portland Batting Cages & Fun</title>
+  <meta name="description" content="Bats and Taps: Indoor batting cages, arcade games, food, beer, and family fun in Southeast Portland. Book your cage today!"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+  <!-- Replace src with your real logo URL when ready -->
+  <img src="https://img1.wsimg.com/isteam/ip/7f0629b5-d258-46c7-acf2-5090d6e1bc3c/Screenshot%202024-01-23%20003045.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:613,cg:true" alt="Bats and Taps Logo" class="logo-img">
+  <!-- Or use text if image not ready: <span>Bats & Taps</span> -->
+</div>
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+
+    <!-- General Info with dropdown -->
+    <li class="dropdown">
+      <a href="general-info.html">General Info</a>
+      <div class="dropdown-content">
+        <a href="general-info.html#about">About</a>
+        <a href="events.html">Events</a>
+        <a href="photos.html">Photos</a>
+        <a href="staff.html">Staff</a>
+      </div>
+    </li>
+
+    <!-- Batting Cages with dropdown -->
+    <li class="dropdown">
+      <a href="batting-cages.html">Batting Cages</a>
+      <div class="dropdown-content">
+        <a href="pricing.html">Pricing</a>
+        <a href="book-cage.html">Book a Cage</a>
+      </div>
+    </li>
+
+    <!-- Other Services with dropdown (more nesting if needed later) -->
+    <li class="dropdown">
+      <a href="other-services.html">Other Services</a>
+      <div class="dropdown-content">
+        <a href="snack-taps.html">Snack Shack & Taps</a>
+        <a href="games-tvs.html">Games and TVs</a>
+        <a href="merch.html">B.A.T. Merch</a>
+        <a href="event-space.html">Event Space</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <h1>Swing Big, Have Fun!</h1>
+    <p>Full-length batting cages, arcade games, yard games, big screens, ballpark eats & craft beer — all under one roof in SE Portland.</p>
+    <a href="book-cage.html" class="btn">Book a Cage Now</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="text-align:center; font-size:3rem; margin-bottom:3rem; color:#00f5d4;">Why You'll Love Bats & Taps</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Train Like a Pro</h3>
+        <p>4 fully-equipped batting tunnels for serious practice or just for fun.</p>
+      </div>
+      <div class="card">
+        <h3>Good Times</h3>
+        <p>Arcades, yard games, TVs, food & beer — perfect for all ages.</p>
+      </div>
+      <div class="card">
+        <h3>Community Vibe</h3>
+        <p>A bright, lively spot everyone in SE Portland can enjoy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#111; padding:3rem 0; text-align:center;">
+  <div class="container">
+    <p>&copy; 2026 Bats and Taps • SE Portland • Swing Big!</p>
+  </div>
+</footer>
+
+<script>
+  // Optional: Close mobile menu when clicking a link (improves UX)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>
